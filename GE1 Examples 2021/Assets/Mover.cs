@@ -9,6 +9,8 @@ public class Mover : MonoBehaviour
 
     public Transform target;
 
+    public float spd;
+
     public void OnGUI()
     {
         GUI.color = Color.white;
@@ -21,13 +23,29 @@ public class Mover : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+      float distance = Vector3.Distance(target.position,transform.position);
+      spd=distance/Time;   
     }
 
     // Update is called once per frame
     void Update()
     {
-        message.Append("Hello");
+        float distance = Vector3.Distance(target.position,transform.position);
+        Vector3 toTarget = target.position - transform.position;
+        float distance1 = toTarget.magnitude;
+
+        message.Append("Distance: "+distance+"\n");
+        message.Append("Distnace1: "+distance1);
+
+        // toTarget=Vector3.Normalize(toTarget);
+        // // message.Append("");
+
+        // if(distance1>0.1f)
+        // {
+        //     // spd = distance/Time;
+        //     transform.position=transform.position+(toTarget+spd*Time.deltaTime);
+        // }        
+        // message.Append("Time taken: "+Time.TimeSinceLevelLoad);
         
     }
 }

@@ -8,7 +8,7 @@ public class AITank : MonoBehaviour {
     public float radius = 10;
     public int numWaypoints = 5;
     public int current = 0;
-    List<Vector3> waypoints = new List<Vector3>();
+    public List<Vector3> waypoints = new List<Vector3>();
     public float speed = 10;
     public float rotationSpd = 180f;
     public Transform player;    
@@ -25,7 +25,15 @@ public class AITank : MonoBehaviour {
             // Gizmos.color = Color.green;
             // Gizmos.DrawWireSphere(pos, 1);
             
+            /*
+            other ver
+
+            for(int=0 )
+            {
+
+            }
             
+            */
             for(int i = 0; i < numWaypoints; i++)
             {
                 float angle = theta * i;
@@ -33,7 +41,7 @@ public class AITank : MonoBehaviour {
                 float z = Mathf.Cos(angle) * radius;
                 waypoints.Clear();
             
-                Gizmos.color = Color.red;
+                Gizmos.color = Color.black;
                 Gizmos.DrawWireSphere(new Vector3(x,0,z), 1);
             }
         }
