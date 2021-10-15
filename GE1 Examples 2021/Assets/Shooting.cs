@@ -4,25 +4,48 @@ using UnityEngine;
 
 public class Shooting : MonoBehaviour
 {
-    public int fireRate = 5;
-
+    public float fireRate = 5;
     public GameObject bulletPrefab;
-
-    public Transform bulletspawn;
+    public Transform bulletSpawn;
     // Start is called before the first frame update
     void Start()
     {
         
     }
 
+    public void OnEnable()
+    {
+        StartCoroutine(Shoot());
+    }
+
+    bool shooting = false;
+
+    System.Collections.IEnumerator Shoot()
+    {
+        while(true)
+        {
+            if (Input.GetAxis("Fire1") > 0 )     
+            {
+                GameObject b = GameObject.Instantiate<GameObject>(bulletPrefab);
+                b.transform.position = bulletSpawn.transform.position;
+                b.transform.rotation = bulletSpawn.rotation;
+                yield return new WaitForSeconds(1 / (float) fireRate);
+            }
+            else
+            {
+                yield return null;
+            }
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetAxis("Fire1")>0)
-        {
-            GameObject b = GameObject.Instantiate<GameObject>(bullet);
-            b.transform.position=bulletspawn.transform.position;
-            b.transform.rotation=bulletspawn.rotation;
-        }        
+        // if(Input.GetAxis("Fire1")>0)
+        // {
+        //     GameObject b = GameObject.Instantiate<GameObject>(bullet);
+        //     b.transform.position=bulletspawn.transform.position;
+        //     b.transform.rotation=bulletspawn.rotation;
+        // }        
     }
 }
