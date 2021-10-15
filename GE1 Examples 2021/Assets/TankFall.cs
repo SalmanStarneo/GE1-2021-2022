@@ -9,13 +9,20 @@ public class TankFall : MonoBehaviour
     {
         int maxCount = 5;
         int count =0;
+        float XT;
+        float YT;
+        float ZT;
+
         while(true)
         {   
+            
             if(count<maxCount)
             {
-            
+                XT = Random.Range(0,30);
+                YT = Random.Range(15,25);
+                ZT = Random.Range(0,25);
                 GameObject tank = GameObject.Instantiate(tankrain);
-                tank.transform.position = new Vector3(0, 20, 0);
+                tank.transform.position = new Vector3(XT, YT, ZT);
                 tank.AddComponent<Rigidbody>();
                 tank.tag = "tankrain";
                 count++;
