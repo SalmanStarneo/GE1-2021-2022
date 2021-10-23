@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - tankrain
+  - bullet
+  - baddie
   layers:
   - Default
   - TransparentFX

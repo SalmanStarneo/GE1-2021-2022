@@ -542,7 +542,7 @@ MonoBehaviour:
   current: 0
   waypoints: []
   speed: 5
-  player: {fileID: 0}
+  player: {fileID: 8131073536557471411}
 --- !u!54 &907509977
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -756,7 +756,7 @@ GameObject:
   - component: {fileID: 1320465619}
   - component: {fileID: 1320465618}
   m_Layer: 0
-  m_Name: spawner (1)
+  m_Name: EnemySpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -774,8 +774,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f62b9f4f4a22d040aa4ed27aa3c499d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tankrain: {fileID: 1256808325954726658, guid: 228dc3d84b1ab294494e81bc6c14b6da,
-    type: 3}
+  baddie: {fileID: 4167139277259699343, guid: 1fb2cf01e685374488aae03ddefd995f, type: 3}
 --- !u!4 &1320465619
 Transform:
   m_ObjectHideFlags: 0
@@ -955,8 +954,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0764203b5d5b4324c9c9e6f74f745917, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireRate: 5
-  bulletPrefab: {fileID: 5225532400266386832, guid: 5243983eab731c14781c2e00a351bcd4,
+  fireRate: 3
+  bulletPrefab: {fileID: 5564516629084405639, guid: a71e5a7c6ad525746861f9ebac2e1019,
     type: 3}
   bulletSpawn: {fileID: 7539243}
 --- !u!23 &1423435907064065937

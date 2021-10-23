@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TankFall : MonoBehaviour
 {
-    public GameObject tankrain;
+    public GameObject baddie;
     System.Collections.IEnumerator Drop()
     {
         int maxCount = 5;
@@ -21,10 +21,10 @@ public class TankFall : MonoBehaviour
                 XT = Random.Range(0,30);
                 YT = Random.Range(15,25);
                 ZT = Random.Range(0,25);
-                GameObject tank = GameObject.Instantiate(tankrain);
+                GameObject tank = GameObject.Instantiate(baddie);
                 tank.transform.position = new Vector3(XT, YT, ZT);
                 tank.AddComponent<Rigidbody>();
-                tank.tag = "tankrain";
+                tank.tag = "baddie";
                 count++;
                 
                 yield return new WaitForSeconds(1);
